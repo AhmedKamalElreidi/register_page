@@ -20,12 +20,16 @@ class _RegisterPageState extends State<RegisterPage> {
             Expanded(
               flex: 2,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const Text("Create Your account"),
+                  const Text(
+                    "Create Your account",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
                   Image.asset(
                     "assets/70.jpg",
-                    width: 50,
-                    height: 50,
+                    width: 150,
+                    height: 150,
                   ),
                 ],
               ),
@@ -44,7 +48,12 @@ class _RegisterPageState extends State<RegisterPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text("Syndicate ID No:"),
+                      const Text(
+                        "Syndicate ID No:",
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
@@ -60,7 +69,10 @@ class _RegisterPageState extends State<RegisterPage> {
                       const SizedBox(
                         height: 20,
                       ),
-                      const Text("Email"),
+                      const Text("Email",
+                          style: TextStyle(
+                            color: Colors.grey,
+                          )),
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
@@ -69,16 +81,19 @@ class _RegisterPageState extends State<RegisterPage> {
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                                 borderSide:
-                                    const BorderSide(color: Colors.blue)),
+                                    const BorderSide(color: Colors.grey)),
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                                 borderSide:
-                                    const BorderSide(color: Colors.blue))),
+                                    const BorderSide(color: Colors.grey))),
                       ),
                       const SizedBox(
                         height: 20,
                       ),
-                      const Text("Password"),
+                      const Text("Password",
+                          style: TextStyle(
+                            color: Colors.grey,
+                          )),
                       TextFormField(
                         obscureText: isVisable,
                         keyboardType: TextInputType.visiblePassword,
@@ -97,11 +112,11 @@ class _RegisterPageState extends State<RegisterPage> {
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                                 borderSide:
-                                    const BorderSide(color: Colors.blue)),
+                                    const BorderSide(color: Colors.grey)),
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                                 borderSide:
-                                    const BorderSide(color: Colors.blue))),
+                                    const BorderSide(color: Colors.grey))),
                       ),
                       const SizedBox(
                         height: 30,
@@ -143,7 +158,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               height: 40,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                  color: const Color(0xff791BE5)),
+                                  color: const Color(0xff18AFBA)),
                               child: const Text(
                                 'Login',
                                 style: TextStyle(
@@ -158,12 +173,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       const Center(child: Text('You are not a member yet?')),
                       Center(
                         child: TextButton(
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .pushReplacement(MaterialPageRoute(
-                                builder: (context) => const RegisterPage(),
-                              ));
-                            },
+                            onPressed: () {},
                             child: const Text(
                               'Visit as a Guest',
                               style: TextStyle(color: Color(0xff791BE5)),
