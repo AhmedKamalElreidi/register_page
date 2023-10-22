@@ -23,8 +23,9 @@ class _RegisterPageState extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   const Text(
-                    "Create Your account",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    "Create Your \naccount",
+                    style: TextStyle(color: Colors.white, fontSize: 30),
+                    softWrap: true,
                   ),
                   Image.asset(
                     "assets/70.jpg",
@@ -35,7 +36,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
             ),
             Expanded(
-              flex: 5,
+              flex: 6,
               child: Container(
                 padding: const EdgeInsets.all(10),
                 decoration: const BoxDecoration(
@@ -43,143 +44,146 @@ class _RegisterPageState extends State<RegisterPage> {
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20))),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        "Syndicate ID No:",
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
-                      ),
-                      TextFormField(
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    const BorderSide(color: Colors.grey)),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    const BorderSide(color: Colors.grey))),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      const Text("Email",
+                child: SingleChildScrollView(
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Syndicate ID No:",
                           style: TextStyle(
                             color: Colors.grey,
-                          )),
-                      TextFormField(
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                            label: const Text('Email'),
-                            prefixIcon: const Icon(Icons.email_rounded),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    const BorderSide(color: Colors.grey)),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    const BorderSide(color: Colors.grey))),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      const Text("Password",
-                          style: TextStyle(
-                            color: Colors.grey,
-                          )),
-                      TextFormField(
-                        obscureText: isVisable,
-                        keyboardType: TextInputType.visiblePassword,
-                        decoration: InputDecoration(
-                            label: const Text('Password'),
-                            prefixIcon: const Icon(Icons.lock),
-                            suffixIcon: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    isVisable = !isVisable;
-                                  });
-                                },
-                                icon: Icon((isVisable)
-                                    ? Icons.remove_red_eye
-                                    : Icons.visibility_off_rounded)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    const BorderSide(color: Colors.grey)),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    const BorderSide(color: Colors.grey))),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      const Align(
-                        alignment: Alignment.centerRight,
-                        child: Text("Forget Password?"),
-                      ),
-                      Center(
-                        child: GestureDetector(
-                            onTap: () {},
-                            child: Container(
-                              width: 150,
-                              alignment: Alignment.center,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: const Color(0xff791BE5)),
-                              child: const Text(
-                                'SignUp',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            )),
-                      ),
-                      const Center(
-                        child: Text(
-                          "Or",
-                          style: TextStyle(),
+                          ),
                         ),
-                      ),
-                      Center(
-                        child: GestureDetector(
-                            onTap: () {},
-                            child: Container(
-                              width: 120,
-                              alignment: Alignment.center,
-                              height: 40,
-                              decoration: BoxDecoration(
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextFormField(
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                              focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(20),
-                                  color: const Color(0xff18AFBA)),
-                              child: const Text(
-                                'Login',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
+                                  borderSide:
+                                      const BorderSide(color: Colors.grey)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide:
+                                      const BorderSide(color: Colors.grey))),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Text("Email",
+                            style: TextStyle(
+                              color: Colors.grey,
+                            )),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextFormField(
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide:
+                                      const BorderSide(color: Colors.grey)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide:
+                                      const BorderSide(color: Colors.grey))),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Text("Password",
+                            style: TextStyle(
+                              color: Colors.grey,
+                            )),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextFormField(
+                          obscureText: isVisable,
+                          keyboardType: TextInputType.visiblePassword,
+                          decoration: InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide:
+                                      const BorderSide(color: Colors.grey)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide:
+                                      const BorderSide(color: Colors.grey))),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Align(
+                          alignment: Alignment.centerRight,
+                          child: Text("Forget Password?",
+                              style: TextStyle(fontSize: 17)),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              GestureDetector(
+                                  onTap: () {},
+                                  child: Container(
+                                    width: 150,
+                                    alignment: Alignment.center,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: const Color(0xff791BE5)),
+                                    child: const Text(
+                                      'SignUp',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  )),
+                              const Text(
+                                "Or",
+                                style: TextStyle(),
                               ),
-                            )),
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      const Center(child: Text('You are not a member yet?')),
-                      Center(
-                        child: TextButton(
-                            onPressed: () {},
-                            child: const Text(
-                              'Visit as a Guest',
-                              style: TextStyle(color: Color(0xff791BE5)),
-                            )),
-                      )
-                    ],
+                              GestureDetector(
+                                  onTap: () {},
+                                  child: Container(
+                                    width: 120,
+                                    alignment: Alignment.center,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: const Color(0xff18AFBA)),
+                                    child: const Text(
+                                      'Login',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  )),
+                              const SizedBox(
+                                height: 40,
+                              ),
+                              const Text('You are not a member yet?'),
+                              TextButton(
+                                  onPressed: () {},
+                                  child: const Text(
+                                    'Visit as a Guest',
+                                    style: TextStyle(color: Color(0xff791BE5)),
+                                  )),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
